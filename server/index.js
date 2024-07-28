@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 8000; // Use PORT from environment variables or
 
 //Setup a route for fileupload
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the File Upload Server");
+});
+
 app.post("/upload", upload.single("file"), (req, res) => {
   console.log("File uploaded successfully", req.file);
   res.status(200).json({ message: "File uploaded successfully" });
