@@ -9,6 +9,9 @@ const upload = require("./upload");
 
 const PORT = process.env.PORT || 8000; // Use PORT from environment variables or default to 8000
 
+// Serve static files from the "uploads" directory
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 //Setup a route for fileupload
 
 app.get("/", (req, res) => {
