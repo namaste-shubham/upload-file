@@ -13,7 +13,7 @@ const FileUpload = () => {
     try {
       // send file to backend server
       const response = await axios.post(
-        "http://localhost:9000/upload",
+        "https://upload-server-d75659103070.herokuapp.com/upload",
         formData
       );
       if (response.status === 200) {
@@ -21,6 +21,7 @@ const FileUpload = () => {
         toast.success("File uploaded successfully!");
       }
     } catch (err) {
+      console.log("File upload failed due to error:" + err);
       toast.error("File upload failed!");
     }
   };

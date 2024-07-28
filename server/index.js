@@ -7,7 +7,7 @@ app.use(cors());
 // import middleware
 const upload = require("./upload");
 
-const PORT = 9000;
+const PORT = process.env.PORT || 8000; // Use PORT from environment variables or default to 8000
 
 //Setup a route for fileupload
 
